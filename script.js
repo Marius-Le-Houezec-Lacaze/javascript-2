@@ -37,7 +37,6 @@ function green(){
   if (edit_2.classList.contains("text-success")){ 
   edit_2.classList.remove("text-success");
   edit_2p.classList.remove("text-success");
-  console.log(edit_2)
   } else { 
   edit_2.classList.add("text-success");
   edit_2p.classList.add("text-success");
@@ -102,6 +101,7 @@ function sw(e){
           break;
       }
 }
+
 function getSelectedText() {
   return window.getSelection ? window.getSelection() 
                              : document.selection.createRange().text;
@@ -122,6 +122,7 @@ function action() {
 }
 
 /* Fin exercice 9*/
+
 
 addEventListener('mouseup', action, false)
 foot.addEventListener("click", click, false);
