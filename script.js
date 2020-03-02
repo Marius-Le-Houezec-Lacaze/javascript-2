@@ -46,6 +46,8 @@ function nuke(){
   }
 }
 
+
+/* Exercice 6*/
 document.querySelectorAll('.card').forEach(item => {
   let btn = item.getElementsByTagName("button")[0];
   let p =  item.querySelector(".card-text");
@@ -60,7 +62,9 @@ document.querySelectorAll('.card').forEach(item => {
     }
   });
 })
+/* Fin Exercice 6*/
 
+/*Exercice 7*/
 function before(){
   album.insertBefore(album.lastChild, album.childNodes[0])
 }
@@ -68,14 +72,17 @@ function before(){
 function after(){
   album.insertBefore(album.firstChild, album.childNodes.nextSibling);
 }
+/* Fin exercice 7*/
 
+/* Exerice 9 */
 function getSelectedText() {
   return window.getSelection ? window.getSelection() 
                              : document.selection.createRange().text;
 }
 
 function action() {
-  if (window.getSelection().anchorNode.data === "JS & Events"){
+  if(window.getSelection().anchorNode !== null){
+  if (window.getSelection().anchorNode.data === "JS & Events" && window.getSelection() != null ){
     addEventListener('keypress', function(e) {
       switch(e.code){
         case 'KeyQ':
@@ -95,8 +102,12 @@ function action() {
           break;
       }
     })
+  } else {
+  }
   }
 }
+
+/* Fin exercice 9*/
 
 addEventListener('mouseup', action, false)
 foot.addEventListener("click", click, false);
