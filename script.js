@@ -82,16 +82,9 @@ function after(){
 /* Fin exercice 7*/
 
 /* Exerice 9 */
-function getSelectedText() {
-  return window.getSelection ? window.getSelection() 
-                             : document.selection.createRange().text;
-}
 
-function action() {
-  if(window.getSelection().anchorNode !== null){
-  if (window.getSelection().anchorNode.data === "JS & Events" && window.getSelection() != null ){
-    addEventListener('keypress', function(e) {
-      switch(e.code){
+function sw(e){
+  switch(e.code){
         case 'KeyQ':
           document.body.className = "";
           document.body.classList.add("col-md-4");
@@ -108,8 +101,22 @@ function action() {
           document.body.className = "";
           break;
       }
-    })
+}
+function getSelectedText() {
+  return window.getSelection ? window.getSelection() 
+                             : document.selection.createRange().text;
+}
+
+function action() {
+  if(window.getSelection().anchorNode !== null){
+
+  if (window.getSelection().anchorNode.data === "JS & Events"){
+    document.onkeypress = function (e) {
+      e = e || window.event;
+      sw(e);
+  };
   } else {
+    document.onkeypress = null;
   }
   }
 }
