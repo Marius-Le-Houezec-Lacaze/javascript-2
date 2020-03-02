@@ -4,8 +4,10 @@ let nav = document.getElementsByTagName("header")[0];
 let css = document.getElementsByTagName("link")[0];
 let ham = document.getElementById("navbarHeader");
 let collapse_btn = document.getElementsByClassName("navbar-toggler")[0];
-let edit =  document.getElementsByClassName("btn-outline-secondary")[0]; 
-let edit_2 =  document.getElementsByClassName("btn-outline-secondary")[1]; 
+let edit =  document.getElementsByClassName("btn-outline-secondary")[0];
+var edit_p = document.getElementsByClassName("card-body")[0]; 
+let edit_2 =  document.getElementsByClassName("btn-outline-secondary")[1];
+var edit_2p = document.getElementsByClassName("card-body")[1]; 
 let album = document.querySelector(".album .row");
 let range = album.childNodes.lenght - 1;
 let right = document.querySelectorAll(".my-2")[1];
@@ -28,13 +30,18 @@ function collapse(){
 
 function color(){
   edit.classList.add("text-danger");
+  edit_p.classList.add("text-danger");
 }
 
 function green(){
   if (edit_2.classList.contains("text-success")){ 
   edit_2.classList.remove("text-success");
+  edit_2p.classList.remove("text-success");
+  console.log(edit_2)
   } else { 
   edit_2.classList.add("text-success");
+  edit_2p.classList.add("text-success");
+
 }
 }
 
@@ -66,11 +73,11 @@ document.querySelectorAll('.card').forEach(item => {
 
 /*Exercice 7*/
 function before(){
-  album.insertBefore(album.lastChild, album.childNodes[0])
+  album.insertBefore(album.lastElementChild, album.childNodes[0])
 }
 
 function after(){
-  album.insertBefore(album.firstChild, album.childNodes.nextSibling);
+  album.insertBefore(album.firstElementChild, album.lastElementChild.nextSibling);
 }
 /* Fin exercice 7*/
 
